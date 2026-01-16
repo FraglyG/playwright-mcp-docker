@@ -3,6 +3,7 @@ set -e
 
 # Defaults
 MCP_PORT=${PORT:-8931}
+MCP_VERSION=${VERSION:-latest}
 
 # Build arguments array
 set -- "--port" "$MCP_PORT" "$@"
@@ -110,4 +111,4 @@ if [ -n "$VIEWPORT_SIZE" ]; then
 fi
 
 # Start
-npx @playwright/mcp@latest "$@"
+npx @playwright/mcp@${MCP_VERSION} "$@"
